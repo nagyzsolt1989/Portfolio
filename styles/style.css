@@ -1,0 +1,149 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+
+h1 {font-size: 100px; color: #333;}
+h2 {font-size: 33px; color: #333;}
+
+/* you start with transparent type and faux cursor */
+/* each character has typing animation for .5s */
+/* fill mode makes the text keep the color it gets in animation */
+.char1, .char2, .char3, .char4, .char5, .char6,.char7, .char8, .char9, .char10, .char11, .char12,.char13, .char14, .char15, .char16, .char17, .char18,.char19, .char20, .char21, .char22, .char23,.char24, .char25, .char26, .char27, .char28,.char29 {
+    color: transparent;
+    border-right: .1em solid transparent;
+    -webkit-animation: typing .5s;
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation: typing .5s;
+    -moz-animation-fill-mode: forwards;
+}
+.typing-text{
+    position: absolute;
+    font-family: Montserrat;
+    letter-spacing: -2px;
+    color: #95a5a6;
+    top: 60%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%) }
+
+.char1 {-webkit-animation-delay: .5s;}
+.char2 {-webkit-animation-delay: 1s;}
+.char3 {-webkit-animation-delay: 1.5s;}
+.char4 {-webkit-animation-delay: 2s;}
+.char5 {-webkit-animation-delay: 2.5s;}
+.char6 {-webkit-animation-delay: 3s;}
+.char7 {-webkit-animation-delay: 3.5s;}
+.char8 {-webkit-animation-delay: 4s;}
+.char9 {-webkit-animation-delay: 4.5s;}
+.char10 {-webkit-animation-delay: 5s;}
+.char11 {-webkit-animation-delay: 5.5s;}
+.char12 {-webkit-animation-delay: 6s;}
+.char13 {-webkit-animation-delay: 6.5s;}
+.char14 {-webkit-animation-delay: 7s;}
+.char15 {-webkit-animation-delay: 7.5s;}
+.char16 {-webkit-animation-delay: 8s;}
+.char17 {-webkit-animation-delay: 8.5s;}
+.char18 {-webkit-animation-delay: 9s;}
+.char19 {-webkit-animation-delay: 9.5s;}
+.char20 {-webkit-animation-delay: 10s;}
+.char21 {-webkit-animation-delay: 10.5s;}
+.char22 {-webkit-animation-delay: 11s;}
+.char23 {-webkit-animation-delay: 11.5s;}
+.char24 {-webkit-animation-delay: 12s;}
+.char25 {-webkit-animation-delay: 12.5s;}
+.char26 {-webkit-animation-delay: 13s;}
+.char27 {-webkit-animation-delay: 13.5s;}
+.char28 {-webkit-animation-delay: 14s;}
+.char29 {-webkit-animation-delay: 14.5s;}
+.char30 {-webkit-animation-delay: 15s;}
+/* give your last character some padding and the blink animation */
+.char6s {
+    padding-right: 2px;
+    -webkit-animation: typing 1s;
+    -webkit-animation: blink 1s infinite;
+    -webkit-animation-delay: 3.2s;
+    -moz-animation: typing 1s infinite;
+    -moz-animation: blink 1s infinite;
+    -moz-animation-delay: 3.2s;
+}
+
+/* typing animation */
+@-webkit-keyframes typing {
+    from, to {color: #ecf0f1; border-color: transparent; }
+    70% {color: white; border-color: white; }
+}
+@-moz-keyframes typing {
+    from, to {color: #ecf0f1; border-color: transparent; }
+    70% {color: white; border-color: white; }
+}
+
+/* the blinking faux cursor at the end */
+@-webkit-keyframes blink {
+    from, to {color: #ecf0f1; border-color: transparent;}
+    50% {border-color: #ecf0f1;}
+}
+@-moz-keyframes blink {
+    from, to {border-color: transparent;}
+    50% {border-color: #ecf0f1;}
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.logo{
+	text-align: center;
+	font-size: 20px;
+	padding: 20px;
+}
+
+.image {
+    height: 750px;
+    width: 100%;
+    background: #55e6c5;
+    z-index: 1;
+    }
+
+.content {
+    height: 750px;
+    width:100%;
+    background: white;
+    z-index: 2;
+}
+.content h1 {
+    font-size: 40px;
+    color: #464646;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    margin: 30px 60px;
+}
+.content p {
+    font-size:20px;
+    color: #343434;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    margin: 30px 60px;
+}
+#wall_1 {
+    background: url(../images/me.jpg) no-repeat center center fixed;
+    background-attachment: fixed;
+ -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+#wall_2 {
+    background: url(../images/school.png) repeat;
+    background-attachment: fixed;
+}
+#wall_3 {
+    background: url(../images/skulls.png) repeat;
+    background-attachment: fixed;
+}
+
+#content_1 {position: relative;}
+/*
+h1::first-letter {
+    font-size: 60px;
+    font-weight: 600;
+    color:#3cb0f8;
+}*/
