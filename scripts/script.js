@@ -3,8 +3,6 @@ $(document).ready(function() {
     
 });
 
-$("#typing-text").bigtext();
-
 $(document).ready(
 
   function() { 
