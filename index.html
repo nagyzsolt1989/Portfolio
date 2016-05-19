@@ -4,19 +4,33 @@
     <meta charset="UTF-8">
     <title>It is me.</title>
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <link rel="stylesheet" type="text/css" href="styles/default.css" />
+    <link rel="stylesheet" type="text/css" href="styles/component.css" />
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
-     <script src="scripts/jquery.stellar.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="scripts/jquery.stellar.js"></script>
     <script src="scripts/script.js"></script>
-    <script src="scripts/jquery.nicescroll.js"></script>
-
-    
 </head>
 <body>
+
+    <div class="loader"></div>
+/*
+    <div class="board">
+        <div class="left">
+        </div>
+        <div class="right">
+        </div>
+        <div class="ball">
+        </div>
+        <div class="ballhit">
+        </div>
+    </div>
+*/
+
     <div id="logo" class="logo">Nice to meet you | Blog | Search</div>
     <div class="typing-text">
+    <hr>
     <h1>
         <span class="char1">H</span>
         <span class="char2">e</span>
@@ -50,6 +64,7 @@
         <span class="char28">u</span>
         <span class="char29">!</span>
     </h2>
+    <hr>
     </div>
     <div id="wall_1" class="image" data-stellar-background-ratio="0.4" ></div>
     <div id="content_1" class="content">
@@ -59,63 +74,175 @@
         
     </div>
 
-    <div class="portfolio">
-        <h3>Recent projects:</h3>
-        <figure>
-            <div class="app-type">App&nbsp&nbsp<hr class="app-hr"></div>
-            <img src="http://lorempixel.com/192/96/sports/1" alt="Portfolio Item">
-            <figcaption>
-                <h3>Title</h3>
-                <p>Description.</p>
-            </figcaption>
-        </figure>
+    <div class="skills">
+        <img src="images/ninja.png" class="ninja" alt="Ninja">
+        <h3 class="ninja">Skills</h3>
+        <div class="portfolio-container">
 
-        <figure>
-            <div class="web-type">Web&nbsp&nbsp<hr class="web-hr"></div>
-            <img src="http://lorempixel.com/192/96/sports/2" alt="Portfolio Item">
-            <figcaption>
-                <h3>Title</h3>
-                <p>Description.</p>
-            </figcaption>
-        </figure>
+            <div class="portfolio-fixer- container">
+            <div class="column one-half">
 
-        <figure>
-            <div class="game-type">Game&nbsp&nbsp<hr class="game-hr"></div>
-            <img src="http://lorempixel.com/192/96/sports/3" alt="Portfolio Item">
-            <figcaption>
-                <h3>Title</h3>
-                <p>Description.</p>
-            </figcaption>
-        </figure>
+                <div class="skillbar clearfix " data-percent="80%">
+                    <div class="skillbar-title"><span><strong>HTML5</strong></span></div>
+                    <div class="skillbar-bar" style="background: #3498db;"></div>
+                    <!--<div class="skill-bar-percent">20%</div>*/-->
+                </div> <!-- End Skill Bar -->
 
-        <figure>
-            <div class="app-type">App&nbsp&nbsp<hr class="app-hr"></div>
-            <img src="http://lorempixel.com/192/96/sports/4" alt="Portfolio Item">
-            <figcaption>
-                <h3>Title</h3>
-                <p>Description.</p>
-            </figcaption>
-        </figure>
+                <div class="skillbar clearfix " data-percent="90%">
+                    <div class="skillbar-title"><span><strong>CSS3</strong></span></div>
+                    <div class="skillbar-bar" style="background: #3498db;"></div>
+                </div> <!-- End Skill Bar -->
+
+                <div class="skillbar clearfix " data-percent="40%">
+                    <div class="skillbar-title"><span><strong>JavaScript</strong></span></div>
+                    <div class="skillbar-bar" style="background: #3498db;"></div>
+                </div> <!-- End Skill Bar -->
+
+                <div class="skillbar clearfix " data-percent="50%">
+                    <div class="skillbar-title"><span><strong>Java</strong></span></div>
+                    <div class="skillbar-bar" style="background: #3498db;"></div>
+                </div> <!-- End Skill Bar -->
+
+                <div class="skillbar clearfix " data-percent="65%">
+                    <div class="skillbar-title"><span><strong>C</strong></span></div>
+                    <div class="skillbar-bar" style="background: #3498db;"></div>
+                </div> <!-- End Skill Bar -->
+
+                <div class="skillbar clearfix " data-percent="60%">
+                    <div class="skillbar-title"><span><strong>C++</strong></span></div>
+                    <div class="skillbar-bar" style="background: #3498db;"></div>
+                </div> <!-- End Skill Bar -->
+
+                <div class="skillbar clearfix " data-percent="70%">
+                    <div class="skillbar-title"><span><strong>Mobile Development</strong></span></div>
+                    <div class="skillbar-bar" style="background: #3498db;"></div>
+                </div>
+            </div>
+
+            <div class="column one-half">
+
+                <div class="skillbar clearfix " data-percent="70%">
+                    <div class="skillbar-title"><span><strong>Software testing</strong></span></div>
+                    <div class="skillbar-bar" style="background: #3498db;"></div>
+                </div> <!-- End Skill Bar -->
+
+                <div class="skillbar clearfix " data-percent="68%">
+                    <div class="skillbar-title"><span><strong>Whitebox testing</strong></span></div>
+                    <div class="skillbar-bar" style="background: #3498db;"></div>
+                </div> <!-- End Skill Bar -->
+
+                <div class="skillbar clearfix " data-percent="65%">
+                    <div class="skillbar-title"><span><strong>Blackbox testing</strong></span></div>
+                    <div class="skillbar-bar" style="background: #3498db;"></div>
+                </div> <!-- End Skill Bar -->
+
+                <div class="skillbar clearfix " data-percent="70%">
+                    <div class="skillbar-title"><span><strong>Functional testing</strong></span></div>
+                    <div class="skillbar-bar" style="background: #3498db;"></div>
+                </div> <!-- End Skill Bar -->
+
+                <div class="skillbar clearfix " data-percent="75%">
+                    <div class="skillbar-title"><span><strong>Regression testing</strong></span></div>
+                    <div class="skillbar-bar" style="background: #3498db;"></div>
+                </div> <!-- End Skill Bar -->
+
+                <div class="skillbar clearfix " data-percent="80%">
+                    <div class="skillbar-title"><span><strong>Agile methodologies</strong></span></div>
+                    <div class="skillbar-bar" style="background: #3498db;"></div>
+                </div> <!-- End Skill Bar -->
+
+                <div class="skillbar clearfix " data-percent="90%">
+                    <div class="skillbar-title"><span><strong>Scrum</strong></span></div>
+                    <div class="skillbar-bar" style="background: #3498db;"></div>
+                </div> <!-- End Skill Bar -->
+            </div>
+        </div>
+        </div>
+
     </div>
 
-    <div id="wall_2" class="image" data-stellar-background-ratio="0.4"  ></div>
-    <div id="content_2" class="contact" >
+    <div id="wall_2" class="quote" data-stellar-background-ratio="0.4"  >
+
+        <h3>Attitude is a little thing that makes a big difference. </h3>
+        <h6><strong>- Winston Churchill -</strong></h6>>
+    </div>
+
+    <div id="content_2" class="content">
+
+        <h3>Now reading:</h3>
+
+        <div class="book-container">
+
+            <div class="book">
+
+                <div class="front"><img src="/images/book-front.jpg" alt="Lean Solutions"></div>
+                <div class="back"><img src="/images/book-back.jpg" alt="Lean Solutions"></div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="portfolio">
+
+        <h3>Recent projects:</h3>
+
+        <div class="portfolio-container">
+
+            <div class="portfolio-fixer- container">
+
+            <figure>
+                <div class="app-type">App&nbsp&nbsp<hr class="app-hr"></div>
+                <img src="http://lorempixel.com/192/96/sports/1" alt="Portfolio Item">
+                <figcaption>
+                    <h3>Title</h3>
+                    <p>Description.</p>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <div class="web-type">Web&nbsp&nbsp<hr class="web-hr"></div>
+                <img src="http://lorempixel.com/192/96/sports/2" alt="Portfolio Item">
+                <figcaption>
+                    <h3>Title</h3>
+                    <p>Description.</p>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <div class="game-type">Game&nbsp&nbsp<hr class="game-hr"></div>
+                <img src="http://lorempixel.com/192/96/sports/3" alt="Portfolio Item">
+                <figcaption>
+                    <h3>Title</h3>
+                    <p>Description.</p>
+                </figcaption>
+            </figure>
+
+            <figure>
+                <div class="app-type">App&nbsp&nbsp<hr class="app-hr"></div>
+                <img src="http://lorempixel.com/192/96/sports/4" alt="Portfolio Item">
+                <figcaption>
+                    <h3>Title</h3>
+                    <p>Description.</p>
+                </figcaption>
+            </figure>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div id="content_3" class="contact" >
         
         <h1>Contact</h1>
-        <img src="/images/portrait.png">
+        <img src="/images/portrait.png" id="me">
         <img class="icon" src="/images/linkedin-icon.png">
         <img class="icon" src="/images/gmail-icon.png">
+        <img class="icon" src="/images/github-icon.png">
 
     </div>
-    <div id="wall_3" class="image" data-stellar-background-ratio="0.4"  ></div>
-    <div id="content_3" class="content">
-        
-        <h1>Heading</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        
-    </div>
-    
+
 
 </body>
 </html>
