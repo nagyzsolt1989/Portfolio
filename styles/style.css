@@ -8,6 +8,77 @@ Loading Screen
 ==============================================
 */
 
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1001;
+}
+#loader {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+
+    border: 3px solid #3498db;
+    z-index: 1500;
+}
+
+#loader:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 3px solid #e74c3c;
+}
+#loader:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border: 3px solid #f9c922;
+}
+
+#loader-wrapper .loader-section {
+    position: fixed;
+    top: 0;
+    width: 51%;
+    height: 100%;
+    background: #222222;
+    z-index: 1000;
+}
+
+#loader-wrapper .loader-section.section-left {
+    left: 0;
+}
+
+#loader-wrapper .loader-section.section-right {
+    right: 0;
+}
+
+/* Loaded */
+.loaded #loader-wrapper .loader-section.section-left {
+    -webkit-transform: translateX(-100%);  /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: translateX(-100%);  /* IE 9 */
+    transform: translateX(-100%);  /* Firefox 16+, IE 10+, Opera */
+}
+
+.loaded #loader-wrapper .loader-section.section-right {
+    -webkit-transform: translateX(100%);  /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: translateX(100%);  /* IE 9 */
+    transform: translateX(100%);  /* Firefox 16+, IE 10+, Opera */
+}
+
+/*
 .loader {
     position: fixed;
     left: 0px;
@@ -17,7 +88,7 @@ Loading Screen
     z-index: 9999;
     background: url(../images/page-loader.gif) no-repeat center center fixed;
 }
-/*
+
 .board {
     position: absolute;
     top:50%;
@@ -108,6 +179,14 @@ Opening Screen
 h1 {font-size: 100px; color: #333;}
 h2 {font-size: 33px; color: #333;}
 
+.home-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: table;
+    table-layout: fixed;
+}
+
 /* you start with transparent type and faux cursor */
 /* each character has typing animation for .5s */
 /* fill mode makes the text keep the color it gets in animation */
@@ -185,18 +264,13 @@ h2 {font-size: 33px; color: #333;}
 	padding: 20px;
 }
 
-.image {
-    height: 750px;
-    width: 100%;
-    background: #2980b9;
-    z-index: 1;
-}
+
 
 .content {
+    position: static;
     height: 750px;
     width:100%;
     background: white;
-    z-index: 2;
 }
 .content h1 {
     font-size: 40px;
@@ -222,7 +296,7 @@ Skills Panel
 
 .skills{
     background: #bdc3c7;
-    height: 630px;
+    height: 650px;
 }
 
 .skills h3{
@@ -238,18 +312,21 @@ Skills Panel
     opacity: 0;
 }
 
-.column-container{
-    width: 70%;
-    height: 100%;
+.skills-container{
+    width: 1000px;
     margin: 0 auto;
 }
 
-.one-half {
-    width: 30%;
-    margin-left: 3%;
-}
-.column {
+.barWrapper {
+    float: left;
+    width: 40%;
+    margin-left: 5%;
+    margin-right: 5%;
     display: inline-block;
+}
+
+.column {
+
 
 }
 
@@ -318,6 +395,60 @@ Skills Panel
     color:#ffffff;
     color:rgba(0, 0, 0, 0.4);
 }
+.progress-bar-container{
+    float: left;
+}
+
+.tooltip{
+    position:relative;
+    float:right;
+    display: inline-flex;
+    visibility: hidden;
+    transition: all 0s ease 5s; /*delay 5s*/
+}
+
+.progress-bar:hover .tooltip{
+    transition-delay: 0s;
+    visibility: visible;
+}
+.tooltip > .tooltip-inner {background-color: #eebf3f; padding:5px 15px; color:rgb(23,44,66); font-weight:bold; font-size:13px;}
+.popOver + .tooltip > .tooltip-arrow {	border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 5px solid #eebf3f;}
+
+section{
+    margin:100px auto;
+    height:1000px;
+    float: left;
+}
+
+.progressText {
+    background: #bdc3c7;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 22px;
+    color: #262626;
+
+    -webkit-border-top-left-radius:3px;
+    -webkit-border-bottom-left-radius:4px;
+    -moz-border-radius-topleft:3px;
+    -moz-border-radius-bottomleft:3px;
+    border-top-left-radius:3px;
+    border-bottom-left-radius:3px;
+}
+
+.progress{
+    margin-top: 5px;
+    height:12px;
+    border-radius: 5px;
+    overflow:visible;
+}
+.progress-bar{
+    background: #3498db;
+    height:12px;
+    border-radius: 5px;
+    -webkit-transition: width 1.5s ease-in-out;
+    transition: width 1.5s ease-in-out;
+}
+
 
 /*
 ==============================================
@@ -545,7 +676,7 @@ Contact Panel
 }
 
 .contact img.icon{
-    height: 6em;
+    height: 10em;
     display: inline-block;
     vertical-align: middle;
     padding-left: 100px;
@@ -559,13 +690,20 @@ Backgrounds
 
 #wall_1 {
     background: url(../images/me.jpg) no-repeat center center fixed;
-    background-attachment: fixed;
     background-position: 0px 0px;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
+
+.image {
+    height: 800px;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
 
 #wall_2 {
     background: url(../images/churchill.jpg) no-repeat fixed 50% 0;
