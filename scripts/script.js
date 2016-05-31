@@ -1,47 +1,16 @@
-
-
-jQuery(document).ready(function(){
+jQuery(document).ready(function()
+{
 
     /*Interactivity to determine when an animated element in in view. In view elements trigger our animation*/
-    $(window).on("load",function() {
-        function slideup() {
-            var animation_height = $(window).innerHeight() * 0.01;
-
-            //iterate through elements to see if its in view
-            jQuery('.skillbar').each(function() {
-
-                var objectTop = $(this).offset().top;
-                var windowBottom = $(window).scrollTop() + $(window).innerHeight();
-
-                if ( objectTop < windowBottom ) {
-                    if ( objectTop < windowBottom - animation_height ) {
-                        $(this).css( {opacity: 1} );
-
-                        jQuery(this).find('.skillbar-bar').animate({
-                            width:jQuery(this).attr('data-percent')
-
-                        },6000);
-
-
-                        $(document).ready(function () {
-                            $(window).stellar();
-
-                        });
-
-                    }
-                }
-            });
-
-
-        }
-        slideup();
-        $(window).scroll(function() {slideup();});
+    $(window).on("load",function()
+    {
 
         //Animate progress-bars when shown
         function showup()
         {
             var animation_height = $(window).innerHeight() * 0.01;
 
+            //iterate through elements to see if its in view
             $(".progress-bar").each(function()
             {
                 var objectTop = $(this).offset().top;
@@ -147,5 +116,32 @@ $(function () {
                 fadein();
             });
         });
+
+$(window).load(function() {
+    var $container = $('.animate-grid .gallary-thumbs');
+    $container.isotope({
+        filter: '*',
+        animationOptions: {
+            duration: 750,
+            easing: 'linear',
+            queue: false
+        }
+    });
+    $('.animate-grid .categories a').click(function() {
+        $('.animate-grid .categories .active').removeClass('active');
+        $(this).addClass('active');
+        var selector = $(this).attr('data-filter');
+        $container.isotope({
+            filter: selector,
+            animationOptions: {
+                duration: 750,
+                easing: 'linear',
+                queue: false
+            }
+        });
+        return false;
+    });
+});
+
 
 
