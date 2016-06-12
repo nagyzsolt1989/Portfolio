@@ -2,6 +2,37 @@
 @import url(http://fonts.googleapis.com/css?family=Lobster);
 @import url(http://fonts.googleapis.com/css?family=Raleway);
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.panel-caption{
+    padding-top: 30px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    font-family: "Montserrat";
+    line-height: 65px;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    word-spacing: 0;
+    color: #ffffff;
+    margin-bottom: 0;
+}
+
+h1 {font-size: 100px; color: #333; margin-top: 0px;}
+h2 {font-size: 33px; color: #333; margin-top: 0px;}
+h3 {margin-top: 0px;}
+
+
 /*
 ==============================================
 Loading Screen
@@ -171,14 +202,6 @@ Opening Screen
 ==============================================
 */
 
-* {
-    margin: 0;
-    padding: 0;
-}
-
-h1 {font-size: 100px; color: #333;}
-h2 {font-size: 33px; color: #333;}
-
 .home-wrap {
     position: relative;
     width: 100%;
@@ -202,7 +225,7 @@ h2 {font-size: 33px; color: #333;}
 .typing-text hr {
     width: 220px;
     height: 2px;
-    background: #fff;
+    background: #bba454;
     border: 0;
     margin: 50px auto 35px;
 }
@@ -264,14 +287,19 @@ h2 {font-size: 33px; color: #333;}
 	padding: 20px;
 }
 
-
-
 .content {
     position: static;
     height: 750px;
     width:100%;
     background: white;
 }
+
+.fullscreen{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+}
+
 .content h1 {
     font-size: 40px;
     color: #464646;
@@ -279,6 +307,7 @@ h2 {font-size: 33px; color: #333;}
     font-weight: 600;
     margin: 30px 60px;
 }
+
 .content p {
     font-size:20px;
     color: #343434;
@@ -287,6 +316,26 @@ h2 {font-size: 33px; color: #333;}
     margin: 30px 60px;
 }
 
+/*
+==============================================
+Introduction Panel
+==============================================
+*/
+
+.introduction{
+    position: static;
+    height: 750px;
+    width: 100%;
+    background: #292929;
+}
+
+.introduction p{
+    padding: 30px;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: justify;
+
+}
 
 /*
 ==============================================
@@ -295,8 +344,8 @@ Skills Panel
 */
 
 .skills{
-    background: #bdc3c7;
-    height: 650px;
+    background: #a6a6a6;
+    height:770px;
 }
 
 .skills h3{
@@ -307,8 +356,8 @@ Skills Panel
 
 .skills img{
     display: block;
-    margin: 20px auto;
-    padding-top: 20px;
+    margin: auto;
+    padding-top: 40px;
     opacity: 0;
 }
 
@@ -323,11 +372,6 @@ Skills Panel
     margin-left: 5%;
     margin-right: 5%;
     display: inline-block;
-}
-
-.column {
-
-
 }
 
 .skillbar {
@@ -419,12 +463,10 @@ section{
 }
 
 .progressText {
-    background: #bdc3c7;
     font-weight: 400;
     font-size: 19px;
     line-height: 22px;
     color: #262626;
-
     -webkit-border-top-left-radius:3px;
     -webkit-border-bottom-left-radius:4px;
     -moz-border-radius-topleft:3px;
@@ -447,6 +489,10 @@ section{
     transition: width 1.5s ease-in-out;
 }
 
+.certification{
+    padding: 30px;
+    height: 15em;
+}
 
 /*
 ==============================================
@@ -465,7 +511,8 @@ Books Panel
 .book {
     height: 100%;
     position: absolute;
-    margin-left: 100px;
+    margin-top: 40px;
+    margin-left: 150px;
     transform-style: preserve-3d;
     transition: all 1s ease-in-out;
     width: 100%;
@@ -477,7 +524,7 @@ Books Panel
 
 .book .front {
     backface-visibility: hidden;
-    height: 219px;
+    height: 221px;
     border-style: solid;
     border-width: 2px;
     position: absolute;
@@ -487,7 +534,7 @@ Books Panel
 
 .book .back {
     transform: rotateY(180deg);
-    height: 219px;
+    height: 221px;
     border-style: solid;
     border-width: 2px;
 }
@@ -499,7 +546,7 @@ Portfolio Panel
 */
 
 .portfolio{
-    background: #2980b9;
+    background: #a6a6a6;;
     height: 600px;
 }
 
@@ -516,58 +563,13 @@ Portfolio Panel
 }
 
 h3{
-    font-size: 25px;
-    padding: 20px;
+    font-size: 18px;
+    padding: 15px;
     font-family: Montserrat;
 }
 
-.app-type{
-    height: 2.5em;
-    width: 100%;
-    text-align: right;
-    background: #ffffff;
-    color: #d14233;
-    font: bold 24px/45px Helvetica, Sans-Serif;
-    letter-spacing: -1px;
-}
-
-.app-hr {
-    text-align: right;
-    margin: 0 0 0 auto;
-    border-top: 3px solid #d14233;
-    width: 45%;
-}
-
-.web-type{
-    height: 2.5em;
-    text-align: right;
-    background: #ffffff;
-    color :#2ecc71;
-    font: bold 24px/45px Helvetica, Sans-Serif;
-    letter-spacing: -1px;
-}
-
-.web-hr {
-    text-align:right;
-    margin: 0 0 0 auto;
-    border-top: 3px solid #2ecc71;
-    width: 45%;
-}
-
-.game-type{
-    height: 2.5em;
-    text-align: right;
-    background: #ffffff;
-    color: #3498db;
-    font: bold 24px/45px Helvetica, Sans-Serif;
-    letter-spacing: -1px;
-}
-
-.game-hr {
-    text-align:right;
-    margin: 0 0 0 auto;
-    border-top: 3px solid #3498db;
-    width: 45%;
+.p{
+    padding: 15px;
 }
 
 .portfolio figure {
@@ -580,10 +582,11 @@ h3{
 }
 
 .portfolio figure:hover {
-    -webkit-transform:/* perspective(500)*/ rotateX(90deg) translateY(-3em) translateZ(3em);
+    -webkit-transform:/* perspective(500)*/ rotateX(90deg) translateY(-3em) translateZ(6em);
 }
 
 .portfolio img {
+    height: 10em;
     width: 18em;
     background-color: #a0a0a0;
     box-shadow: 0 20px 15px -10px hsla(0,0%,0%,.25);
@@ -596,7 +599,7 @@ h3{
 }
 
 .portfolio figcaption {
-    height: 18em;
+    height: 10em;
     background-color: #222;
     color: #fff;
     padding: 0.2em;
@@ -627,9 +630,9 @@ ul, ol { padding: 0;}
 }
 
 .gallary ul {
-    padding: 10px 0;
+    padding-bottom: 20px;
     text-align: center;
-    font-size: 24px;
+    font-size: 28px;
 }
 
 .gallary ul li {
@@ -639,28 +642,45 @@ ul, ol { padding: 0;}
 
 .gallary ol li {
     display: inline-block;
-    margin-left: 20px;
+    margin: 0 0.5em 0;
 }
 
 .gallary ol li:after {
-    content: ' | ';
+    color: #ffffff;
     margin-left: 20px;
+    display: inline-block;
+    text-align: center;
+    list-style: none;
+    outline: none;
 }
 
 .gallary ol li:last-child:after {
-    content: '';
 }
 
 .gallary ol li a {
-    color: #222222;
+    color: #ffffff;
+    font-weight: 700;
+    padding: 0px 10px 3px 10px;
+    text-decoration: none;
+}
+
+.gallary ol li a:hover {
+    text-decoration: none;
+    font-weight: 700;
+    color: #3498db;
+    transition: 0.5s;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -o-transition: 0.5s;
+    -ms-transition: 0.5s;
 }
 
 .gallary ol li a.active {
-    font-weight: 700;
+    border-bottom: solid 5px #3498db;
 }
 
 .gallary .gallary-item {
-    margin-bottom: 20px !important;
+    /*margin-bottom: 20px !important;*/
     display: block;
     position: relative;
     margin: 0 auto;
@@ -796,24 +816,44 @@ Quote Panel
 
 /*
 ==============================================
+Reading Panel
+==============================================
+*/
+
+.bookshelf {
+    height: 500px;
+    background: #292929 !important;
+}
+
+/*
+==============================================
 Contact Panel
 ==============================================
 */
 
 .contact{
-    margin: 30px auto;
-    height: 6em;
+    background: #292929;
     text-align: center;
     vertical-align: middle;
 }
 
 .contact h1{
-    text-align: left;
+    /*text-align: left;
     font-size: 40px;
     color: #464646;
     font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
-    margin: 20px;
+    font-weight: 600;*/
+    padding-top: 30px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 55px;
+    font-family: "Montserrat";
+    line-height: 65px;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    word-spacing: 0;
+    color: #ffffff;
+    margin-bottom: 0;
 }
 
 .contact img {
@@ -839,12 +879,22 @@ Backgrounds
 */
 
 #wall_1 {
-    background: url(../images/me.jpg) no-repeat center center fixed;
+ /*   background: url(../images/me.jpg) no-repeat center center fixed;
     background-position: 0px 0px;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
+    background-size: cover;*/
+
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background: url(../images/me.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
+    text-align: center;
 }
 
 .image {
@@ -1013,4 +1063,72 @@ BounceIn Animation
     80%{ -webkit-transform: translateY(-4%);  }
     95%{ -webkit-transform: translateY(2%);   }
     100%{ -webkit-transform: translateY(0%);  }
+}
+
+
+.portfolio-modal .modal-content {
+    padding: 100px 0;
+    min-height: 100%;
+    border: 0;
+    border-radius: 0;
+    text-align: center;
+    background-clip: border-box;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.portfolio-modal .modal-content h2 {
+    margin: 0;
+    font-size: 3em;
+}
+
+.portfolio-modal .modal-content img {
+    margin-bottom: 10px;
+    margin-left: 30px;
+    width: 45%;
+    float: left;
+}
+
+.portfolio-modal .modal-content .item-details {
+    margin: 30px 0;
+}
+
+.portfolio-modal .close-modal {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    width: 75px;
+    height: 75px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.portfolio-modal .close-modal:hover {
+    opacity: .3;
+}
+
+.portfolio-modal .close-modal .lr {
+    z-index: 1051;
+    width: 1px;
+    height: 75px;
+    margin-left: 35px;
+    background-color: #2c3e50;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.portfolio-modal .close-modal .lr .rl {
+    z-index: 1052;
+    width: 1px;
+    height: 75px;
+    background-color: #2c3e50;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.portfolio-modal .modal-backdrop {
+    display: none;
+    opacity: 0;
 }
