@@ -1,6 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat);
 @import url(http://fonts.googleapis.com/css?family=Lobster);
 @import url(http://fonts.googleapis.com/css?family=Raleway);
+@import url(http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
 
 * {
     margin: 0;
@@ -8,51 +9,62 @@
 }
 
 body, html {
-    margin: 0;
-    padding: 0;
     height: 100%;
-}
+    position: relative;
 
-.panel-caption{
-    padding-top: 30px;
-    text-align: center;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 40px;
-    font-family: "Montserrat";
-    line-height: 65px;
-    text-transform: uppercase;
-    letter-spacing: 0px;
-    word-spacing: 0;
-    color: #ffffff;
-    margin-bottom: 0;
 }
 
 h1 {font-size: 100px; color: #333; margin-top: 0px;}
 h2 {font-size: 33px; color: #333; margin-top: 0px;}
 h3 {margin-top: 0px;}
 
+section{
+    float: left;
+    width: 100%;
+}
 
 /*
 ==============================================
 Loading Screen
 ==============================================
 */
-#loader {
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+.loader{
+    display: block;
     position: absolute;
     left: 50%;
     top: 50%;
-    z-index: 1;
+    width: 64px;
+    height: 64px;
+    z-index: 1001;
+}
+
+#loader {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
     width: 150px;
     height: 150px;
     margin: -75px 0 0 -75px;
     border: 16px solid #f3f3f3;
     border-radius: 50%;
     border-top: 16px solid #3498db;
-    width: 120px;
-    height: 120px;
     -webkit-animation: spin 2s linear infinite;
     animation: spin 2s linear infinite;
+
+    -webkit-animation: spin 2s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+    animation: spin 2s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+
+    z-index: 1001;
 }
 
 @-webkit-keyframes spin {
@@ -65,27 +77,73 @@ Loading Screen
     100% { transform: rotate(360deg); }
 }
 
-/* Add animation to "page content" */
-.animate-bottom {
-    position: relative;
-    -webkit-animation-name: animatebottom;
-    -webkit-animation-duration: 1s;
-    animation-name: animatebottom;
-    animation-duration: 1s
+#loader-wrapper .loader-section {
+    position: fixed;
+    top: 0;
+    width: 51%;
+    height: 100%;
+    background: #222222;
+    z-index: 1000;
+    -webkit-transform: translateX(0);  /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: translateX(0);  /* IE 9 */
+    transform: translateX(0);  /* Firefox 16+, IE 10+, Opera */
 }
 
-@-webkit-keyframes animatebottom {
-    from { bottom:-100px; opacity:0 }
-    to { bottom:0px; opacity:1 }
+#loader-wrapper .loader-section.section-left {
+    left: 0;
 }
 
-@keyframes animatebottom {
-    from{ bottom:-100px; opacity:0 }
-    to{ bottom:0; opacity:1 }
+#loader-wrapper .loader-section.section-right {
+    right: 0;
 }
 
-#page-content{
+/* Loaded */
+.loaded #loader-wrapper .loader-section.section-left {
+    -webkit-transform: translateX(-100%);  /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: translateX(-100%);  /* IE 9 */
+    transform: translateX(-100%);  /* Firefox 16+, IE 10+, Opera */
+
+    -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+.loaded #loader-wrapper .loader-section.section-right {
+    -webkit-transform: translateX(100%);  /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: translateX(100%);  /* IE 9 */
+    transform: translateX(100%);  /* Firefox 16+, IE 10+, Opera */
+
+    -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+.loaded #loader {
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+.loaded #loader-wrapper {
+    visibility: hidden;
+
+    -webkit-transform: translateY(-100%);  /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: translateY(-100%);  /* IE 9 */
+    transform: translateY(-100%);  /* Firefox 16+, IE 10+, Opera */
+
+    -webkit-transition: all 0.3s 1s ease-out;
+    transition: all 0.3s 1s ease-out;
+}
+
+/* JavaScript Turned Off */
+.no-js #loader-wrapper {
     display: none;
+}
+.no-js h1 {
+    color: #222222;
+}
+
+#content {
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
 /*
@@ -108,6 +166,8 @@ Opening Screen
 .char1, .char2, .char3, .char4, .char5, .char6,.char7, .char8, .char9, .char10, .char11, .char12,.char13, .char14, .char15, .char16, .char17, .char18,.char19, .char20, .char21, .char22, .char23,.char24, .char25, .char26, .char27, .char28,.char29 {
     color: transparent;
     border-right: .1em solid transparent;
+    animation: typing .3s;
+    animation-fill-mode: forwards;
     -webkit-animation: typing .3s;
     -webkit-animation-fill-mode: forwards;
     -moz-animation: typing .3s;
@@ -127,44 +187,47 @@ Opening Screen
     font-family: Montserrat;
     letter-spacing: -2px;
     color: #95a5a6;
-    top: 60%;
+    top: 61%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%) }
 
-.char1 {-webkit-animation-delay: .5s;}
-.char2 {-webkit-animation-delay: 1s;}
-.char3 {-webkit-animation-delay: 1.5s;}
-.char4 {-webkit-animation-delay: 2s;}
-.char5 {-webkit-animation-delay: 2.5s;}
-.char6 {-webkit-animation-delay: 3s;}
-.char7 {-webkit-animation-delay: 3.5s;}
-.char8 {-webkit-animation-delay: 3.8s;}
-.char9 {-webkit-animation-delay: 4.1s;}
-.char10 {-webkit-animation-delay: 4.4s;}
-.char11 {-webkit-animation-delay: 4.7s;}
-.char12 {-webkit-animation-delay: 5s;}
-.char13 {-webkit-animation-delay: 5.3s;}
-.char14 {-webkit-animation-delay: 5.6s;}
-.char15 {-webkit-animation-delay: 5.9s;}
-.char16 {-webkit-animation-delay: 6.2s;}
-.char17 {-webkit-animation-delay: 6.5s;}
-.char18 {-webkit-animation-delay: 6.8s;}
-.char19 {-webkit-animation-delay: 7.1s;}
-.char20 {-webkit-animation-delay: 7.4s;}
-.char21 {-webkit-animation-delay: 7.7s;}
-.char22 {-webkit-animation-delay: 8s;}
-.char23 {-webkit-animation-delay: 8.3s;}
-.char24 {-webkit-animation-delay: 8.7s;}
-.char25 {-webkit-animation-delay: 9s;}
-.char26 {-webkit-animation-delay: 9.3s;}
-.char27 {-webkit-animation-delay: 9.7s;}
-.char28 {-webkit-animation-delay: 10s;}
-.char29 {-webkit-animation-delay: 10.3s;}
-.char30 {-webkit-animation-delay: 10.7s;}
+.char1  {animation-delay: 6.5s;     -webkit-animation-delay: 6.5s;     -moz-animation-delay: 6.5s; }
+.char2  {animation-delay: 7s;       -webkit-animation-delay: 7s;       -moz-animation-delay: 7s;   }
+.char3  {animation-delay: 7.5s;     -webkit-animation-delay: 7.5s;     -moz-animation-delay: 7.5s; }
+.char4  {animation-delay: 8s;       -webkit-animation-delay: 8s;       -moz-animation-delay: 8s;   }
+.char5  {animation-delay: 8.5s;     -webkit-animation-delay: 8.5s;     -moz-animation-delay: 8.5s; }
+.char6  {animation-delay: 9s;       -webkit-animation-delay: 9s;       -moz-animation-delay: 9s;   }
+.char7  {animation-delay: 9.5s;     -webkit-animation-delay: 9.5s;     -moz-animation-delay: 9.5s; }
+.char8  {animation-delay: 9.8s;     -webkit-animation-delay: 9.8s;     -moz-animation-delay: 9.8s; }
+.char9  {animation-delay: 10.1s;    -webkit-animation-delay: 10.1s;    -moz-animation-delay: 10.1s;}
+.char10 {animation-delay: 10.4s;    -webkit-animation-delay: 10.4s;    -moz-animation-delay: 10.4s;}
+.char11 {animation-delay: 10.7s;    -webkit-animation-delay: 10.7s;    -moz-animation-delay: 10.7s;}
+.char12 {animation-delay: 11s;      -webkit-animation-delay: 11s;      -moz-animation-delay: 11s;  }
+.char13 {animation-delay: 11.3s;    -webkit-animation-delay: 11.3s;    -moz-animation-delay: 11.3s;}
+.char14 {animation-delay: 11.6s;    -webkit-animation-delay: 11.6s;    -moz-animation-delay: 11.6s;}
+.char15 {animation-delay: 11.9s;    -webkit-animation-delay: 11.9s;    -moz-animation-delay: 11.9s;}
+.char16 {animation-delay: 12.2s;    -webkit-animation-delay: 12.2s;    -moz-animation-delay: 12.2s;}
+.char17 {animation-delay: 12.5s;    -webkit-animation-delay: 12.5s;    -moz-animation-delay: 12.5s;}
+.char18 {animation-delay: 12.8s;    -webkit-animation-delay: 12.8s;    -moz-animation-delay: 12.8s;}
+.char19 {animation-delay: 13.1s;    -webkit-animation-delay: 13.1s;    -moz-animation-delay: 13.1s;}
+.char20 {animation-delay: 13.4s;    -webkit-animation-delay: 13.4s;    -moz-animation-delay: 13.4s;}
+.char21 {animation-delay: 13.7s;    -webkit-animation-delay: 13.7s;    -moz-animation-delay: 13.7s;}
+.char22 {animation-delay: 14s;      -webkit-animation-delay: 14s;      -moz-animation-delay: 14s;  }
+.char23 {animation-delay: 14.3s;    -webkit-animation-delay: 14.3s;    -moz-animation-delay: 14.3s;}
+.char24 {animation-delay: 14.7s;    -webkit-animation-delay: 14.7s;    -moz-animation-delay: 14.7s;}
+.char25 {animation-delay: 15s;      -webkit-animation-delay: 15s;      -moz-animation-delay: 15s;  }
+.char26 {animation-delay: 15.3s;    -webkit-animation-delay: 15.3s;    -moz-animation-delay: 15.3s;}
+.char27 {animation-delay: 15.7s;    -webkit-animation-delay: 15.7s;    -moz-animation-delay: 15.7s;}
+.char28 {animation-delay: 16s;      -webkit-animation-delay: 16s;      -moz-animation-delay: 16s;  }
+.char29 {animation-delay: 16.3s;    -webkit-animation-delay: 16.3s;    -moz-animation-delay: 16.3s;}
+.char30 {animation-delay: 16.7s;    -webkit-animation-delay: 16.7s;    -moz-animation-delay: 16.7s;}
 /* give your last character some padding and the blink animation */
 .char6s {
     padding-right: 2px;
+    animation:  typing 1s;
+    animation: blink 1s infinite;
+    animation-delay: 3.2s;
     -webkit-animation: typing 1s;
     -webkit-animation: blink 1s infinite;
     -webkit-animation-delay: 3.2s;
@@ -192,6 +255,43 @@ Opening Screen
     overflow:hidden;
 }
 
+.anim-mouse {
+    display: block;
+    margin-top: 20px;
+    left: 50%;
+    margin-right: -50%;
+    width: 28px;
+    height: 45px;
+    background-image: url(../images/icon-mouse.png);
+    background-size: 28px 45px;
+    position: relative;
+    border: 0px;
+}
+
+.anim-mouse span {
+    display: block;
+    position: absolute;
+    top: 7px;
+    left: 50%;
+    margin-left: -2px;
+    width: 4px;
+    height: 10px;
+    background-image: url(../images/icon-mouse-scroll.png);
+    background-size: 4px 10px;
+    -moz-animation: mouse-scroll 1s infinite;
+    -webkit-animation: mouse-scroll 1s infinite;
+    animation: mouse-scroll 1s infinite;
+}
+
+@keyframes mouse-scroll {
+    0%, 100% {
+        top: 7px;
+    }
+    50% {
+        top: 15px;
+    }
+}
+
 .content h1 {
     font-size: 40px;
     color: #464646;
@@ -214,15 +314,33 @@ Introduction Panel
 ==============================================
 */
 
+.panel-caption{
+    padding-top: 30px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    font-family: "Montserrat";
+    line-height: 65px;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    word-spacing: 0;
+    color: #ffffff;
+    margin-bottom: 0;
+}
+
 .introduction{
     position: static;
-    height: 750px;
     width: 100%;
     background: #292929;
 }
 
+.introduction-container{
+    padding-bottom: 60px;
+}
+
 .introduction p{
-    padding: 30px;
+    padding: 30px 100px 0px 100px;
     color: #ffffff;
     font-size: 20px;
     text-align: justify;
@@ -237,7 +355,6 @@ Skills Panel
 
 .skills{
     background: #a6a6a6;
-    height:770px;
 }
 
 .skills h3{
@@ -254,16 +371,19 @@ Skills Panel
 }
 
 .skills-container{
-    width: 1000px;
     margin: 0 auto;
+}
+
+.skills-fixer-container{
+    width: 100%;
 }
 
 .barWrapper {
     float: left;
-    width: 40%;
+    min-width: 40%;
     margin-left: 5%;
     margin-right: 5%;
-    display: inline-block;
+
 }
 
 .skillbar {
@@ -350,10 +470,6 @@ Skills Panel
 .tooltip > .tooltip-inner {background-color: #eebf3f; padding:5px 15px; color:rgb(23,44,66); font-weight:bold; font-size:13px;}
 .popOver + .tooltip > .tooltip-arrow {	border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 5px solid #eebf3f;}
 
-section{
-    float: left;
-}
-
 .progressText {
     font-weight: 400;
     font-size: 19px;
@@ -396,7 +512,7 @@ Books Panel
     cursor: pointer;
     height: 250px;
     width: 144px;
-    /*perspective: 600;*/
+    perspective: 600px;
     position: relative;
 }
 
@@ -410,21 +526,31 @@ Books Panel
     width: 100%;
 }
 
+.book figure{
+    margin: 0;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
 .book:hover {
     transform: rotateY(180deg);
 }
 
 .book .front {
-    backface-visibility: hidden;
+    background: url(../images/book-front.jpg);
+
     height: 221px;
     border-style: solid;
     border-width: 2px;
     position: absolute;
     overflow: hidden;
-
 }
 
 .book .back {
+    background: url(../images/book-back.jpg);
     transform: rotateY(180deg);
     height: 221px;
     border-style: solid;
@@ -438,20 +564,33 @@ Portfolio Panel
 */
 
 .portfolio{
-    background: #a6a6a6;;
-    height: 600px;
+    z-index: -1;
+    background: #a6a6a6;
+    width: 100%;
 }
 
 .portfolio-container{
-    float: left;
-    position: relative;
-    left: 20%;
 }
 
 .portfolio-fixer-container{
-    float: left;
-    position: relative;
-    left: -50%;
+}
+
+img.grayscale {
+    height: 12em;
+    width: 18em;
+    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+, IE10 */
+    -webkit-filter: grayscale(100%); /* Chrome 19+ & Safari 6+ */
+    -webkit-transition: all .6s ease; /* Fade to color for Chrome and Safari */
+    -webkit-backface-visibility: hidden; /* Fix for transition flickering */
+    box-sizing: border-box;
+    box-shadow: 0 20px 15px -10px hsla(0,0%,0%,.25);
+    margin-bottom: 40px;
+}
+
+img.grayscale:hover {
+    filter: none;
+    -webkit-filter: grayscale(0%);
+    box-shadow: 0 20px 15px -10px hsla(0,0%,0%,.25);
 }
 
 h3{
@@ -466,48 +605,18 @@ h3{
 
 .portfolio figure {
     float: left;
-    height: 12em;
-    width: 18em;
    /* -webkit-transform: perspective(500);*/
     -webkit-transform-style: preserve-3d;
     -webkit-transition: .5s;
 }
 
-.portfolio figure:hover {
-    -webkit-transform:/* perspective(500)*/ rotateX(90deg) translateY(-3em) translateZ(6em);
-}
-
 .portfolio img {
     height: 10em;
     width: 18em;
-    background-color: #a0a0a0;
     box-shadow: 0 20px 15px -10px hsla(0,0%,0%,.25);
     display: block;
     -webkit-transition: .5s;
 }
-
-.portfolio figure:hover img {
-    box-shadow: none;
-}
-
-.portfolio figcaption {
-    height: 10em;
-    background-color: #222;
-    color: #fff;
-    padding: 0.2em;
-    color: #262626
-    background-size: 1.5em 1.5em, .5em .5em;
-    -webkit-transform: rotateX(-90deg);
-    -webkit-transform-origin: 100% 0;
-    -webkit-transition: .5s;
-}
-
-.portfolio figure:hover figcaption {
-    box-shadow: 0 20px 15px -10px hsla(0,0%,0%,.25);
-}
-
-
-@import url(http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css);
 
 ul, ol { padding: 0;}
 
@@ -675,6 +784,12 @@ ul, ol { padding: 0;}
     }
 }
 
+/*
+==============================================
+Portfolio Details
+==============================================
+*/
+
 .carousel-indicators {
     bottom:-50px;
 }
@@ -695,13 +810,152 @@ ul, ol { padding: 0;}
     height:auto;
     max-width:100%;
     max-height:100%;
-    /* If you want the images centred then you will need the below css too */
+    background: transparent;
     position: relative;
     top: 50%;
     left:0px;
     bottom: 0px;
     right: 0px;
     margin: auto;
+}
+
+.carousel-control.left, .carousel-control.right{
+    background-color: #a0a0a0;
+    opacity: 0;
+}
+
+.carousel-control:hover{
+    opacity: 1;
+}
+
+.portfolio-details h1{
+    padding-top: 30px;
+    text-align: center;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    font-family: "Montserrat";
+    line-height: 65px;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    word-spacing: 0;
+    color: #000000;
+    margin-bottom: 0;
+}
+
+.centered{
+    text-align: center;
+    background: none;
+}
+
+#close{
+}
+
+/*
+==============================================
+Animated close button
+==============================================
+*/
+
+.circle-container {
+    -moz-perspective: 1000px;
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+    max-width: 560px;
+    display: inline-block;
+    padding: 20px;
+}
+
+.circle {
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 4px solid #292929;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    margin: 10px 20px;
+}
+.circle:after {
+    width: 24px;
+    height: 4px;
+    background-color: #292929;
+    content: "";
+    left: 50%;
+    top: 50%;
+    margin-left: -12px;
+    margin-top: -2px;
+    position: absolute;
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    /*@include transform-origin(100%,100%);*/
+}
+.circle:before {
+    left: 50%;
+    top: 50%;
+    margin-left: -12px;
+    margin-top: -2px;
+    width: 24px;
+    height: 4px;
+    background-color: #292929;
+    content: "";
+    position: absolute;
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    /*@include transform-origin(0%,0%);*/
+}
+
+.fromMiddle:before, .fromMiddle:after {
+    z-index: 9999;
+    -moz-transition-delay: 150ms;
+    -o-transition-delay: 150ms;
+    -webkit-transition-delay: 150ms;
+    transition-delay: 150ms;
+    -moz-transition: ease-in-out 400ms;
+    -o-transition: ease-in-out 400ms;
+    -webkit-transition: ease-in-out 400ms;
+    transition: ease-in-out 400ms;
+}
+.fromMiddle span {
+    width: 38px;
+    height: 38px;
+    background-color: #292929;
+    display: inline-block;
+    position: absolute;
+    -moz-border-radius: 100%;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    left: -2px;
+    top: -2px;
+    z-index: -9999;
+    -moz-transform: scale(0.3);
+    -ms-transform: scale(0.3);
+    -webkit-transform: scale(0.3);
+    transform: scale(0.3);
+    opacity: 0;
+    -moz-transition: ease-in-out 300ms;
+    -o-transition: ease-in-out 300ms;
+    -webkit-transition: ease-in-out 300ms;
+    transition: ease-in-out 300ms;
+}
+
+.fromMiddle:hover:before, .fromMiddle:hover:after {
+    position: absolute;
+    background-color: #fff;
+}
+.fromMiddle:hover span {
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
 }
 
 /*
@@ -758,6 +1012,7 @@ Contact Panel
     background: #292929;
     text-align: center;
     vertical-align: middle;
+    width: 100%;
 }
 
 .contact h1{
@@ -802,17 +1057,11 @@ Backgrounds
 */
 
 #wall_1 {
- /*   background: url(../images/me.jpg) no-repeat center center fixed;
-    background-position: 0px 0px;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;*/
-
     margin: 0;
     padding: 0;
     width: 100%;
-    background: url(../images/me.jpg) no-repeat center center fixed;
+    background: linear-gradient(rgba(0,0,0, .1), rgba(0,0,0,.2)), url(../images/me.jpg) no-repeat center center fixed; /* Opening image and grey layer */
+    background-position: 0px 0px;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -854,6 +1103,11 @@ Typing Animation
 ==============================================
 */
 
+@keyframes typing {
+    from, to {color: #ecf0f1; border-color: transparent; }
+    70% {color: white; border-color: white; }
+}
+
 @-webkit-keyframes typing {
     from, to {color: #ecf0f1; border-color: transparent; }
     70% {color: white; border-color: white; }
@@ -864,6 +1118,12 @@ Typing Animation
 }
 
 /* the blinking faux cursor at the end */
+
+@keyframes blink {
+    from, to {border-color: transparent;}
+    50% {border-color: #ecf0f1;}
+}
+
 @-webkit-keyframes blink {
     from, to {color: #ecf0f1; border-color: transparent;}
     50% {border-color: #ecf0f1;}
@@ -988,6 +1248,10 @@ BounceIn Animation
     100%{ -webkit-transform: translateY(0%);  }
 }
 
+.portfolio-item{
+    display: none;
+    background-colord: #a6a6a6;
+}
 
 .portfolio-modal .modal-content {
     padding: 100px 0;
