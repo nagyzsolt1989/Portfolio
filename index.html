@@ -13,9 +13,7 @@
         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
         <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'>
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,300' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" type="text/css" href="styles/component.css" />
         <link rel="stylesheet" type="text/css" href="styles/style.css" />
-        <link rel="stylesheet" type="text/css" href="styles/default.css" />
 
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
         <script type="text/javascript" src="http://www.designbootstrap.com/livedemos/2015/02/04/pink/assets/js/jquery.isotope.js"></script>
@@ -24,9 +22,20 @@
         <script src="scripts/jquery.stellar.js"></script>
         <script src="scripts/script.js"></script>
 
+        <!--Google Analytics-->
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-24066061-3', 'auto');
+            ga('send', 'pageview');
+
+        </script>
     </head>
 
-    <body onload="myFunction()" style="margin:0;">
+    <body style="margin:0;">
 
       <div id="loader-wrapper">
 
@@ -48,7 +57,7 @@
 
                 <hr>
 
-                <h1 >
+                <h1>
                     <span class="char1">H</span>
                     <span class="char2">e</span>
                     <span class="char3">l</span>
@@ -100,12 +109,20 @@
 
                 <div class="introduction-container">
 
-                    <p>Hello, my name is Zsolt Nagy.  I am a software developer from Budapest Hungary who loves to write software and build great products. I'm obsessed with making things and even more obsessed with making things better. Being good at science, I graduated as an electrical engineer at BUTE. I like to push the boundaries.I have been working professionally in software development since 2014 in the web and mobile spaces with experience across the finance</p>
-                    <p>In the near future I would like to participate in an open source project and start my professional blog about software testing.</p>>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <p>Hello, my name is Zsolt Nagy and I work as a Software Test Engineer in Budapest Hungary. I have been working professionally in software development since 2014
+                        and I am currently working for one of the biggest telecommunication giants.
+                        I graduated as an electrical engineer at Budapest University of Technology and Economics. As an engineer I like to solve problems and build great products.
+                        When I was a kid I always played with lego and was obsessed with making new things, but lately my new passion is making things even better.</p>
 
-                </div>>
+                    <p>I have never met a programmer who never had a bugs in his/her code. Even the best ones are not able to write bug-free code because we are humans and humans make mistakes.</p>
+
+                    <p>But we can do a lot to recognize these mistakes as early as possible, correct and learn from them and try our best to prevent them in the future.
+                        As a Software Test Engineer my duty is to ensure that we develop the highest possible quality products which serve our customers' needs the best.</p>
+
+                    <p>In the near future I would like to participate in an open source project and start my professional blog about software testing.</p>
+
+
+                </div>
 
             </section>
 
@@ -116,11 +133,7 @@
 
                 <div class="skills-container container-fluid">
 
-                    <div class="skills-fixer-container">
-
-                        <div class="row">
-
-                        <div class="barWrapper col-sm-6 col-md-3">
+                        <div class="barWrapper col-sm-6">
 
                             <span class="progressText"><B>HTML5</B></span>
 
@@ -171,7 +184,7 @@
 
                         </div>
 
-                        <div class="barWrapper col-sm-6 col-md-3">
+                        <div class="barWrapper col-sm-6">
 
                             <span class="progressText"><B>Software testing</B></span>
 
@@ -223,25 +236,28 @@
 
                         </div>
 
-                        </div>
+                 </div>
+
+                <img src="images/certification.png" class="ninja" alt="Certifications">
+                <h3 class="panel-caption ninja">Certifications</h3>
+
+                <section>
 
                     <img src="images/ISTQB_CTFL.png" class="icon certification" alt="CTFL">
-                    <!--        <img src="images/ISTQB_CTAL.png" class="icon" alt="CTAL">   -->
+                    <img src="images/ISTQB_CTAL.png" class="icon certification" alt="CTAL">
 
-                    </div>
-
-                </div>
+                </section>
 
             </section>
 
             <section id="wall_2" class="quote" data-stellar-background-ratio="0.4"  >
 
                 <h3>Attitude is a little thing that makes a big difference. </h3>
-                <h6><strong>- Winston Churchill -</strong></h6>>
+                <h6><strong>- Winston Churchill -</strong></h6>
 
             </section>
 
-            <section id="bookshelf" class="bookshelf">ű
+            <section id="bookshelf" class="bookshelf">
 
                 <h3 class="panel-caption">Now reading</h3>
 
@@ -249,12 +265,18 @@
 
                     <div class="book">
 
-                        <figure class="front"></figure>
-                        <figure class="back"></figure>
+                        <div class="front">
+                            <img src="images/book-front.jpg" alt="Lean Solutions">
+                        </div>
+
+                        <div class="back">
+                            <img src="images/book-back.jpg" alt="Lean Solutions">
+                        </div>
 
                     </div>
 
                 </div>
+
 
             </section>
 
@@ -293,23 +315,22 @@
 
                                     <div class="row gallary-thumbs">
 
-                                        <!-- PORTFOLIO ITEM 1 -->
-                                        <div class="col-sm-6 col-md-3 game">
-                                            <div class="gallary-item">
-                                                <div class="hover-bg">
-                                                    <a href="szemiagro.html" alt="portfolio_item1">
-                                                        <img src="http://lorempixel.com/192/96/sports/3" class="grayscale" alt="Portfolio Item">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-
                                         <!-- GAZDA MATEK -->
                                         <div class="col-sm-6 col-md-3 app">
                                             <div class="gallary-item">
                                                 <div class="hover-bg">
-                                                    <a href="szemiagro.html" alt="portfolio_item2">
-                                                        <img src="http://lorempixel.com/192/96/sports/1" class="grayscale" alt="Portfolio Item">
+                                                    <a href="gazdamatek.html" alt="portfolio_item1">
+                                                        <img src="/images/gazdamatek.png" class="grayscale" alt="Portfolio Item">                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- PORTFOLIO SITE -->
+                                        <div class="col-sm-6 col-md-3 web">
+                                            <div class="gallary-item">
+                                                <div class="hover-bg">
+                                                    <a href="portfolio.html" alt="portfolio_item2">
+                                                        <img src="/images/portfolio.png" class="grayscale" alt="Portfolio Item">
                                                     </a>
                                                 </div>
                                             </div>
@@ -337,73 +358,52 @@
                                             </div>
                                         </div>
 
-                                        <!-- PORTFOLIO ITEM 5 -->
-                                        <div class="col-sm-6 col-md-3 web">
-                                            <div class="gallary-item">
-                                                <div class="hover-bg">
-                                                    <a href="#">
-                                                        <div class="hover-text">
-                                                            <h4>Logo Design</h4>
-                                                            <small>Branding</small>
-                                                            <div class="clearfix"></div>
-                                                            <i class="fa fa-plus"></i>
-                                                        </div>
-                                                        <img src="http://placehold.it/660x450/CCC/FFF" class="grayscale img-responsive" alt="...">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <!--&lt;!&ndash;-->
+                                        <!--&lt;!&ndash; PORTFOLIO ITEM 5 &ndash;&gt;-->
+                                        <!--<div class="col-sm-6 col-md-3 web">-->
+                                            <!--<div class="gallary-item">-->
+                                                <!--<div class="hover-bg">-->
+                                                    <!--<a href="#">-->
+                                                        <!--<img src="http://placehold.it/660x450/CCC/FFF" class="grayscale" alt="...">-->
+                                                    <!--</a>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
 
-                                        <!-- PORTFOLIO ITEM 6 -->
-                                        <div class="col-sm-6 col-md-3 app">
-                                            <div class="gallary-item">
-                                                <div class="hover-bg">
-                                                    <a href="#">
-                                                        <div class="hover-text">
-                                                            <h4>Logo Design</h4>
-                                                            <small>Branding</small>
-                                                            <div class="clearfix"></div>
-                                                            <i class="fa fa-plus"></i>
-                                                        </div>
-                                                        <img src="http://placehold.it/660x450/CCC/FFF" class="grayscale img-responsive" alt="...">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <!--&lt;!&ndash; PORTFOLIO ITEM 6 &ndash;&gt;-->
+                                        <!--<div class="col-sm-6 col-md-3 app">-->
+                                            <!--<div class="gallary-item">-->
+                                                <!--<div class="hover-bg">-->
+                                                    <!--<a href="#">-->
+                                                        <!--<img src="http://placehold.it/660x450/CCC/FFF" class="grayscale" alt="...">-->
+                                                    <!--</a>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
 
-                                        <!-- PORTFOLIO ITEM 7 -->
-                                        <div class="col-sm-6 col-md-3 app">
-                                            <div class="gallary-item">
-                                                <div class="hover-bg">
-                                                    <a href="#">
-                                                        <div class="hover-text">
-                                                            <h4>Logo Design</h4>
-                                                            <small>Branding</small>
-                                                            <div class="clearfix"></div>
-                                                            <i class="fa fa-plus"></i>
-                                                        </div>
-                                                        <img src="http://placehold.it/660x450/CCC/FFF" class="grayscale img-responsive" alt="...">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <!--&lt;!&ndash; PORTFOLIO ITEM 7 &ndash;&gt;-->
+                                        <!--<div class="col-sm-6 col-md-3 app">-->
+                                            <!--<div class="gallary-item">-->
+                                                <!--<div class="hover-bg">-->
+                                                    <!--<a href="#">-->
+                                                        <!--<img src="http://placehold.it/660x450/CCC/FFF" class="grayscale" alt="...">-->
+                                                    <!--</a>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
 
-                                        <!-- PORTFOLIO ITEM 8 -->
-                                        <div class="col-sm-6 col-md-3 web">
-                                            <div class="gallary-item">
-                                                <div class="hover-bg">
-                                                    <a href="#">
-                                                        <div class="hover-text">
-                                                            <h4>Logo Design</h4>
-                                                            <small>Branding</small>
-                                                            <div class="clearfix"></div>
-                                                            <i class="fa fa-plus"></i>
-                                                        </div>
-                                                        <img src="http://placehold.it/660x450/CCC/FFF" class="grayscale img-responsive" alt="...">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <!--&lt;!&ndash; PORTFOLIO ITEM 8 &ndash;&gt;-->
+                                        <!--<div class="col-sm-6 col-md-3 web">-->
+                                            <!--<div class="gallary-item">-->
+                                                <!--<div class="hover-bg">-->
+                                                    <!--<a href="#">-->
+                                                        <!--<img src="http://placehold.it/660x450/CCC/FFF" class="grayscale" alt="...">-->
+                                                    <!--</a>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+
+                                        <!--&ndash;&gt;-->
 
                                     </div>
                                 </div>
@@ -420,187 +420,13 @@
             <section id="contact" class="contact" >
 
                 <h1 class="panel-caption">Contact</h1>
-                <img src="/images/portrait.png" id="me">
+                <a href="/documents/resume.pdf"><img src="/images/portrait.png" id="me"></a>
                 <a href="https://www.linkedin.com/in/nagy-zsolt-752902a2?trk=hp-identity-name"><img class="icon img-responsive" src="/images/linkedin-icon.png"></a>
                 <a href="mailto:nagy.zsolt.1989@gmail.com"><img class="icon img-responsive" src="/images/gmail-icon.png"></a>
                 <a href="https://github.com/nagyzsolt1989"><img class="icon img-responsive" src="/images/github-icon.png"></a>
 
             </section>
 
-            <!-- Portfolio Modals -->
-            <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
-                <div class="modal-content">
-                    <div class="close-modal" data-dismiss="modal">
-                        <div class="lr">
-                            <div class="rl">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-8 col-lg-offset-2">
-                                <div class="modal-body">
-                                    <h2>The Game</h2>
-                                    <hr class="star-primary">
-                                    <img src="https://i.imgflip.com/gjxdq.jpg" class="img-responsive img-centered" alt="">
-                                    <p>This was a game I developed for dogs who can't bark</p>
-                                    <ul class="list-inline item-details">
-                                        <li>Client:
-                                            <strong>Silent dogs
-                                            </strong>
-                                        </li>
-                                        <li>Date:
-                                            <strong><a href="http://startbootstrap.com">April 2014</a>
-                                            </strong>
-                                        </li>
-                                        <li>Service:
-                                            <strong><a href="http://startbootstrap.com">Game Development</a>
-                                            </strong>
-                                        </li>
-                                    </ul>
-                                    <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
-                <div class="modal-content">
-                    <div class="close-modal" data-dismiss="modal">
-                        <div class="lr">
-                            <div class="rl">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-8 col-lg-offset-2">
-                                <div class="modal-body">
-                                    <h2>Project Title</h2>
-                                    <hr class="star-primary">
-                                    <img src="img/portfolio/cake.png" class="img-responsive img-centered" alt="">
-                                    <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                                    <ul class="list-inline item-details">
-                                        <li>Client:
-                                            <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                            </strong>
-                                        </li>
-                                        <li>Date:
-                                            <strong><a href="http://startbootstrap.com">April 2014</a>
-                                            </strong>
-                                        </li>
-                                        <li>Service:
-                                            <strong><a href="http://startbootstrap.com">Web Development</a>
-                                            </strong>
-                                        </li>
-                                    </ul>
-                                    <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" role="dialog" aria-hidden="true">
-                <div class="modal-content">
-                    <div class="close-modal" data-dismiss="modal">
-                        <div class="lr">
-                            <div class="rl">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-8 col-lg-offset-2">
-                                <div class="modal-body">
-                                    <h2>Project Title</h2>
-                                    <hr class="star-primary">
-                                    <img src="img/portfolio/circus.png" class="img-responsive img-centered" alt="">
-                                    <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                                    <ul class="list-inline item-details">
-                                        <li>Client:
-                                            <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                            </strong>
-                                        </li>
-                                        <li>Date:
-                                            <strong><a href="http://startbootstrap.com">April 2014</a>
-                                            </strong>
-                                        </li>
-                                        <li>Service:
-                                            <strong><a href="http://startbootstrap.com">Web Development</a>
-                                            </strong>
-                                        </li>
-                                    </ul>
-                                    <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" role="dialog" aria-hidden="true">
-                <div class="modal-content">
-                    <div class="close-modal" data-dismiss="modal">
-                        <div class="lr">
-                            <div class="rl">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-8 col-lg-offset-2">
-                                <div class="modal-body">
-                                    <h2>NaviGazda</h2>
-                                    <hr class="star-primary">
-
-                                    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
-                                        <!-- Wrapper for slides -->
-                                        <div class="carousel-inner" role="listbox">
-                                            <div class="item active">
-                                                <img src="images/navigazda1.png" alt="Chania">
-                                            </div>
-
-                                            <div class="item">
-                                                <img src="images/navigazda2.png" alt="Chania">
-                                            </div>
-
-                                            <div class="item">
-                                                <img src="images/navigazda3.png" alt="Flower">
-                                            </div>
-
-                                        </div>
-
-                                        <!-- Indicators -->
-                                        <ol class="carousel-indicators">
-                                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                            <li data-target="#myCarousel" data-slide-to="1"></li>
-                                            <li data-target="#myCarousel" data-slide-to="2"></li>
-                                        </ol>
-                                    </div>
-
-                                    <p>Use this area of the page to describe your project. The icon above is part of a free icon set by <a href="https://sellfy.com/p/8Q9P/jV3VZ/">Flat Icons</a>. On their website, you can download their free set with 16 icons, or you can purchase the entire set with 146 icons for only $12!</p>
-                                    <ul class="list-inline item-details">
-                                        <li>Client:
-                                            <strong><a href="http://startbootstrap.com">Start Bootstrap</a>
-                                            </strong>
-                                        </li>
-                                        <li>Date:
-                                            <strong><a href="http://startbootstrap.com">April 2014</a>
-                                            </strong>
-                                        </li>
-                                        <li>Service:
-                                            <strong><a href="http://startbootstrap.com">Web Development</a>
-                                            </strong>
-                                        </li>
-                                    </ul>
-                                    <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </body>
 </html>
