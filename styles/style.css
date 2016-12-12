@@ -533,13 +533,87 @@ Skills Panel
 Books Panel
 ==============================================
 */
+.goodreads{
+    margin: 0 auto;
+    max-width: 90%;
+}
+
+.goodreads h2 a{
+    color: #ffffff;
+    font-family: inherit;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.enlarge-image a{
+    color: #ffffff;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.enlarge-image img{
+    width: 157px;
+    height: 256px;
+}
+
+
+#enlarge .gr_grid_book_container{
+    margin: 20px 110px 30px 70px;
+    float: left;
+    width: 157px !important;
+    height: 256px !important;
+    padding: 0px 0px;
+    overflow: hidden;
+}
+
+#enlarge .gr_grid_container {
+    margin: 0 auto;
+    max-width: 1500px;
+}
+
+.gr_grid_container {
+    margin: 0 auto;
+    max-width: 1500px;
+    text-align: center;
+    margin-bottom: 35px !important;
+}
+
+#normalize .gr_grid_book_container img{
+    width: 98px;
+    height: 160px;
+}
+
+
+.gr_grid_book_container {
+    /* customize book cover container div here */
+    float: left;
+    width: 98px;
+    height: 160px;
+    padding: 0px 0px;
+    overflow: hidden;
+    box-shadow: 0 20px 15px -10px hsla(0,0%,0%,.25);
+    -webkit-transition: .5s;
+}
+
+.gr_grid_branding{
+    font-size: 1.5em !important;
+    color: #fff !important;
+    text-align: center !important;
+    float: none !important;
+    margin-bottom: 50px !important;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 25px !important;
+}
 
 .book-container {
+    float: left;
+    /*
     cursor: pointer;
     width: 144px;
     margin: 100px;
     perspective: 600px;
-    position: relative;
+    position: relative;*/
 }
 
 .book{
