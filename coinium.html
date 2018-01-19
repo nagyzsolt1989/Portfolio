@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js'></script>
+
+
+    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'>
+    <link rel="stylesheet" type="text/css" href="styles/coinium.css"/>
+
+</head>
+<body>
+
+<section class="super-view">
+
+    <div class="left-panel">
+
+        <div class="upper">
+            <div class="graph-container" id="chart1">Placeholder for Graph 1</div>
+        </div>
+
+        <div class="lower">
+            <div class="graph-container" id="chart2">Placeholder for Graph 2</div>
+        </div>
+
+        <!--<script type="text/javascript" src="https://static.cryptowat.ch/assets/scripts/embed.bundle.js"></script>-->
+
+    </div>
+
+    <div class="right-panel">
+
+        <h1>Coinium</h1>
+
+        <div>
+            <button class="currency-selector btn btn-primary btn-success margin10" id="Euro">EUR</button>
+            <button class="currency-selector btn btn-primary margin10" id="Dollar">USD</button>
+            <button class="currency-selector btn btn-primary margin10" id="Forint">HUF</button>
+        </div>
+
+        <div>
+            <button class="date-selector btn btn-primary btn-warning margin10">24H</button>
+            <button class="date-selector btn btn-primary margin10">1W</button>
+            <button class="date-selector btn btn-primary margin10">1M</button>
+        </div>
+
+        <div class="panel with-nav-tabs panel-default">
+            <div class="panel with-nav-tabs panel-primary">
+                <div class="panel-heading">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tab1primary" data-toggle="tab">Árfolyam</a></li>
+                        <li><a href="#tab2primary" data-toggle="tab">Portfolio</a></li>
+                        <li><a href="#tab3primary" data-toggle="tab">Hozam</a></li>
+                    </ul>
+                </div>
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="tab1primary">
+
+                            <div class="container">
+
+                                <table class="table">
+                                    <thead>
+                                    <tr class="table-header">
+                                        <th>Coin</th>
+                                        <th class="text-right" colspan="2">Ár</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row">Ethereum</th>
+                                        <td colspan="2" id="eth-value" class="text-right"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Bitcoin</th>
+                                        <td colspan="2" id="btc-value" class="text-right"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Dash Coin</th>
+                                        <td colspan="2" id="dash-value" class="text-right"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Lite Coin</th>
+                                        <td colspan="2" id="ltc-value" class="text-right"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Zcash</th>
+                                        <td colspan="2" id="zcash-value" class="text-right"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">EOS</th>
+                                        <td colspan="2" id="eos-value" class="text-right"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+
+                        </div>
+                        <div class="tab-pane fade" id="tab2primary">
+
+                            <div class="container">
+
+                                <table class="table table-sm">
+                                    <thead>
+                                    <tr class="table-header">
+                                        <th>Coin</th>
+                                        <th class="text-center" colspan="2">Egyenleg</th>
+                                        <th class="text-center">Ár</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row">Ethereum</th>
+                                        <td id="portfolio-eth-qty" colspan="2" class="col-md-4">
+                                            <label for="eth"></label>
+                                            <input
+                                                class="transparent-input text-center" id="eth" type="number" size="1" min="0"
+                                                step="0.1" value="3.6"/></td>
+                                        <td id="portfolio-eth-value">Otto</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Bitcoin</th>
+                                        <td colspan="2" class="col-md-4">
+                                            <label for="btc"></label>
+                                            <input id="btc" class="transparent-input text-center"
+                                                                                type="number" min="0" step="0.1"/></td>
+                                        <td id="portfolio-btc-value"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">NEO</th>
+                                        <td id="portfolio-neo-qty" colspan="2" class="col-md-4">
+                                            <label for="neo"></label>
+                                            <input
+                                                id="neo" class="transparent-input text-center" type="number" min="0" step="0.1"/>
+                                        </td>
+                                        <td id="portfolio-neo-value">@twitter</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Dash Coin</th>
+                                        <td id="portfolio-dash-qty" colspan="2" class="col-md-4">
+                                            <label for="dash"></label>
+                                            <input
+                                                    id="dash" class="transparent-input text-center" type="number" min="0" step="0.1"/>
+                                        </td>
+                                        <td id="portfolio-dash-value">@twitter</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">EOS</th>
+                                        <td id="portfolio-eos-qty" colspan="2" class="col-md-4">
+                                            <label for="eos"></label>
+                                            <input
+                                                    id="eos" class="transparent-input text-center" type="number" min="0" step="0.1"
+                                                value="100"/></td>
+                                        <td id="portfolio-eos-value">@twitter</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Litecoin</th>
+                                        <td id="portfolio-ltc-qty" colspan="2" class="col-md-4">
+                                            <label for="ltc"></label>
+                                            <input
+                                                    id="ltc" class="transparent-input text-center" type="number" min="0" step="0.1"
+                                                size="2"/></td>
+                                        <td id="portfolio-ltc-value"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+                            </div>
+
+                        </div>
+                        <div class="tab-pane fade" id="tab3primary">
+
+                            <div class="container">
+                                <table class="table table-sm">
+                                    <thead>
+                                    <tr class="table-header">
+                                        <th>Coin</th>
+                                        <th class="text-center" colspan="2">Max</th>
+                                        <th class="text-center">Min</th>
+                                        <th class="text-center">Vétel</th>
+                                        <th class="text-center">Hozam</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row">Ethereum</th>
+                                        <td colspan="2">100</td>
+                                        <td>50</td>
+                                        <td>65</td>
+                                        <td>6,8 %</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Bitcoin</th>
+                                        <td colspan="2">1</td>
+                                        <td>50</td>
+                                        <td>65</td>
+                                        <td>6,8 %</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Stratis</th>
+                                        <td colspan="2">1</td>
+                                        <td>50</td>
+                                        <td>65</td>
+                                        <td>6,8 %</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Dash Coin</th>
+                                        <td colspan="2">2</td>
+                                        <td>50</td>
+                                        <td>65</td>
+                                        <td>6,8 %</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Neo</th>
+                                        <td colspan="2">3</td>
+                                        <td>50</td>
+                                        <td>65</td>
+                                        <td>6,8 %</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Litecoin</th>
+                                        <td colspan="2">5</td>
+                                        <td>50</td>
+                                        <td>65</td>
+                                        <td>6,8 %</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div>
+
+            <h3>Devizák</h3>
+
+            <div class="container">
+                <div class="panel panel-primary panel-horizontal pull-left">
+                    <div class="panel-heading">Euro</div>
+                    <div class="panel-body" id="eur-value"></div>
+                </div>
+
+                <div class="panel panel-primary panel-horizontal">
+                    <div class="panel-heading">Dollar</div>
+                    <div class="panel-body" id="usd-value"></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+<script src="scripts/coinium.js"></script>
+
+</body>
+</html>

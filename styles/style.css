@@ -13,9 +13,9 @@ body, html {
     position: relative;
 }
 
-h1 {font-size: 100px; color: #333; margin-top: 0px;}
-h2 {font-size: 33px; color: #333; margin-top: 0px;}
-h3 {margin-top: 0px;}
+h1 {font-size: 100px; color: #333; margin-top: 0;}
+h2 {font-size: 33px; color: #333; margin-top: 0;}
+h3 {margin-top: 0;}
 
 section{
     float: left;
@@ -183,7 +183,7 @@ Opening Screen
     background-image: url(../images/icon-mouse.png);
     background-size: 28px 45px;
     position: relative;
-    border: 0px;
+    border: 0;
 }
 
 .anim-mouse span {
@@ -230,7 +230,7 @@ Opening Screen
 
 .typing-text{
     position: absolute;
-    font-family: Montserrat;
+    font-family: Montserrat, serif;
     letter-spacing: -2px;
     color: #95a5a6;
     top: 61%;
@@ -331,10 +331,10 @@ Introduction Panel
     font-style: normal;
     font-weight: 700;
     font-size: 40px;
-    font-family: "Montserrat";
+    font-family: "Montserrat", serif;
     line-height: 65px;
     text-transform: uppercase;
-    letter-spacing: 0px;
+    letter-spacing: 0;
     word-spacing: 0;
     color: #ffffff;
     margin-bottom: 0;
@@ -351,7 +351,7 @@ Introduction Panel
 }
 
 .introduction p{
-    padding: 30px 100px 0px 100px;
+    padding: 30px 100px 0 100px;
     color: #ffffff;
     font-size: 20px;
     text-align: justify;
@@ -379,6 +379,11 @@ Skills Panel
     margin: 0 auto;
     padding-top: 40px;
     opacity: 0;
+}
+
+.skills h4{
+    color: #fff;
+    font-size:  20px;
 }
 
 .ninja{
@@ -413,12 +418,10 @@ Skills Panel
     -webkit-border-radius:3px;
     -webkit-transition:0.4s linear;
     -moz-transition:0.4s linear;
-    -ms-transition:0.4s linear;
     -o-transition:0.4s linear;
     transition:0.4s linear;
     -webkit-transition-property:width, background-color;
     -moz-transition-property:width, background-color;
-    -ms-transition-property:width, background-color;
     -o-transition-property:width, background-color;
     transition-property:width, background-color;
 }
@@ -451,7 +454,7 @@ Skills Panel
 
 .skillbar-bar {
     height:10px;
-    width: 0px;
+    width: 0;
     background:#6adcfa;
     border-radius:3px;
     -moz-border-radius:3px;
@@ -518,13 +521,10 @@ Skills Panel
 }
 
 .certification{
-    padding: 30px;
     height: 13em;
     display: inline-block;
     vertical-align: middle;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-bottom: 20px;
+    padding: 30px 50px 20px;
     margin-bottom: 30px !important;
 }
 
@@ -562,7 +562,7 @@ Books Panel
     float: left;
     width: 157px !important;
     height: 256px !important;
-    padding: 0px 0px;
+    padding: 0 0;
     overflow: hidden;
 }
 
@@ -587,14 +587,13 @@ Books Panel
     float: left;
     width: 98px;
     height: 160px;
-    padding: 0px 0px;
+    padding: 0 0;
     overflow: hidden;
     box-shadow: 0 20px 15px -10px hsla(0,0%,0%,.25);
     -webkit-transition: .5s;
 }
 
 .gr_grid_branding{
-    font-size: 1.5em !important;
     color: #fff !important;
     text-align: center !important;
     float: none !important;
@@ -633,16 +632,14 @@ Books Panel
 
 .book .front {
     height: 221px;
-    border-style: solid;
-    border-width: 2px;
+    border: 2px solid;
     position: absolute;
 }
 
 .book .back {
     transform: rotateY(180deg);
     height: 221px;
-    border-style: solid;
-    border-width: 2px;
+    border: 2px solid;
 }
 
 /*
@@ -664,11 +661,9 @@ Portfolio Panel
 }
 
 img.grayscale {
-    height: 12em;
-    width: 18em;
+    height: 9em;
+    width: 15em;
     filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 3.5+, IE10 */
-    filter: grey; /* IE6-9 */
-    -webkit-filter: grayscale(100%); /* Chrome 19+ & Safari 6+ */
     -webkit-transition: all .6s ease; /* Fade to color for Chrome and Safari */
     -webkit-backface-visibility: hidden; /* Fix for transition flickering */
     box-sizing: border-box;
@@ -685,7 +680,7 @@ img.grayscale:hover {
 h3{
     font-size: 18px;
     padding: 15px;
-    font-family: Montserrat;
+    font-family: Montserrat, serif;
 }
 
 .p{
@@ -700,8 +695,8 @@ h3{
 }
 
 .portfolio img {
-    height: 10em;
-    width: 18em;
+    height: 9em;
+    width: 15em;
     box-shadow: 0 20px 15px -10px hsla(0,0%,0%,.25);
     -webkit-transition: .5s;
 }
@@ -762,7 +757,6 @@ ul, ol { padding: 0;}
     -webkit-transition: 0.5s;
     -moz-transition: 0.5s;
     -o-transition: 0.5s;
-    -ms-transition: 0.5s;
 }
 
 .gallary ol li a.active {
@@ -901,15 +895,13 @@ Portfolio Details
     background: transparent;
     position: relative;
     top: 50%;
-    left:0px;
-    bottom: 0px;
-    right: 0px;
+    left:0;
+    bottom: 0;
+    right: 0;
     margin: auto;
 }
 
 .carousel-control.left, .carousel-control.right{
-    filter: progid:none !important;
-
     background-color: #a0a0a0;
     opacity: 0;
 }
@@ -924,17 +916,17 @@ Portfolio Details
     font-style: normal;
     font-weight: 700;
     font-size: 40px;
-    font-family: "Montserrat";
+    font-family: "Montserrat", serif;
     line-height: 65px;
     text-transform: uppercase;
-    letter-spacing: 0px;
+    letter-spacing: 0;
     word-spacing: 0;
     color: #000000;
     margin-bottom: 0;
 }
 
 .portfolio-details p{
-    padding: 20px 100px 0px 100px;
+    padding: 20px 100px 0 100px;
     color: #ffffff;
     font-size: 20px;
     text-align: justify;
@@ -960,7 +952,7 @@ Portfolio Details
     background: #6AD;
     color: #FFF;
     padding: 5px 10px;
-    margin: 10px 10px 20px 0px;
+    margin: 10px 10px 20px 0;
     font: normal 16px sans-serif;
     position: relative;
     cursor: default;
@@ -1099,7 +1091,7 @@ Quote Panel
 
 .quote h3{
     /*font-family: 'Lobster', cursive;*/
-    font-family: Raleway;
+    font-family: Raleway, serif;
     position: relative;
     top: 160px;
     padding-left: 40px;
@@ -1154,10 +1146,10 @@ Contact Panel
     font-style: normal;
     font-weight: 700;
     font-size: 55px;
-    font-family: "Montserrat";
+    font-family: "Montserrat", serif;
     line-height: 65px;
     text-transform: uppercase;
-    letter-spacing: 0px;
+    letter-spacing: 0;
     word-spacing: 0;
     color: #ffffff;
     margin-bottom: 0;
@@ -1206,17 +1198,14 @@ Backgrounds
 
 
 #wall_2 {
-    background: url(../images/churchill.jpg) no-repeat fixed 50% 0;
-    background-attachment: fixed;
-    background-position: 0px 0px;
+    background: url(../images/churchill.jpg) no-repeat fixed 0 0;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
 }
 #wall_3 {
-    background: url(../images/skulls.png) repeat;
-    background-attachment: fixed;
+    background: url(../images/skulls.png) repeat fixed;
 }
 
 /*
@@ -1378,7 +1367,7 @@ BounceIn Animation
 
 .portfolio-item{
     display: none;
-    background-colord: #a6a6a6;
+    background-color: #a6a6a6;
 }
 
 .portfolio-modal .modal-content {
@@ -1451,3 +1440,7 @@ BounceIn Animation
 }
 
 
+
+body {
+    margin: 0;
+}
